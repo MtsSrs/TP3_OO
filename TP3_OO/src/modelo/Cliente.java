@@ -76,7 +76,7 @@ public class Cliente {
 		Main.clientes.add(cliente);
 	}
 
-	public static void visualizarLista() {
+	public static void visualizarClientes() {
 		for (int i = 0; i < Main.clientes.size(); i++) {
 			System.out.print(i + "º - ");
 			System.out.println(Main.clientes.get(i));
@@ -85,6 +85,7 @@ public class Cliente {
 	}
 
 	public static void editarCliente(int i, ArrayList<Cliente> clientes) {
+		
 		System.out.println("Digite o nome do cliente:");
 		String nomeCliente = Main.sc.nextLine();
 
@@ -99,7 +100,8 @@ public class Cliente {
 		Cliente cliente = new Cliente(nomeCliente, enderecoCliente, cpfCliente, telefoneCliente);
 		clientes.set(i, cliente);
 		System.out.println("Cliente editado\n");
-	}
+		}
+		
 
 	public static void deletarCliente(int i, ArrayList<Cliente> clientes) {
 		clientes.remove(i);

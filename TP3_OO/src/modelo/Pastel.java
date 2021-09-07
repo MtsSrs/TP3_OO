@@ -4,13 +4,11 @@ public class Pastel extends Produto {
 	private String saborPastel;
 	private String comprimentoPastel;
 	
-	public Pastel(String nome, int preco, int id, String sabor, String comprimento){
-		nomeProduto = nome;
-		precoProduto = preco;
-		idProduto = id;
-		saborPastel = sabor;
-		comprimentoPastel = comprimento;
-	}
+	public Pastel(String nomeProduto, int precoProduto, int idProduto, String saborPastel, String comprimentoPastel) {
+        super(nomeProduto, precoProduto, idProduto);
+        this.saborPastel = saborPastel;
+        this.comprimentoPastel = comprimentoPastel;
+    }
 	
 	
 	public String getSaborPastel() {
