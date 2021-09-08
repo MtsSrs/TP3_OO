@@ -1,8 +1,6 @@
 package modelo;
 
 import java.util.ArrayList;
-import java.util.Collection;
-
 import test_application.Main;
 
 public class Cliente {
@@ -110,7 +108,7 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [\nNome do cliente = " + nomeCliente + "\nEndereco do cliente = " + enderecoCliente
-				+ "\nCPF docliente = " + cpfCliente + "\nTelefone do cliente = " + telefoneCliente + "\n]";
+		return "Cliente [\nnomeCliente = " + nomeCliente + "\nenderecoCliente = " + enderecoCliente + "\ncpfCliente = "
+				+ cpfCliente + "\ntelefoneCliente = " + telefoneCliente + "\n]";
 	}
 }

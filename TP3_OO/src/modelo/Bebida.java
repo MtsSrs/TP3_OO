@@ -32,8 +32,7 @@ public class Bebida extends Produto {
 		String nomeProduto = Main.sc.nextLine();
 
 		System.out.println("Digite o preço da bebida: " + i + "º");
-		int precoProduto = Main.sc.nextInt();
-		Main.sc.nextLine();
+		float precoProduto = Main.sc.nextFloat();
 
 		System.out.println("Digite o ID da bebida: " + i + "º");
 		int idProduto = Main.sc.nextInt();
@@ -63,7 +62,7 @@ public class Bebida extends Produto {
 		String nomeProduto = Main.sc.nextLine();
 	
 		System.out.println("Digite o preço da bebida: " + i + "º");
-		int precoProduto = Main.sc.nextInt();
+		float precoProduto = Main.sc.nextFloat();
 		Main.sc.nextLine();
 	
 		System.out.println("Digite o ID da bebida: " + i + "º");
@@ -91,5 +90,5 @@ public class Bebida extends Produto {
 		return "Bebida [\nNome = " + nomeProduto + "\nPreço = " + precoProduto + "\nID = " + 
 				+ idProduto + "\nTipo = " + tipoBebida + "\nVolume = " + volumeBebida + "ml\n]";
 	}
-	
+
 }
