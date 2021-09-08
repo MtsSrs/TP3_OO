@@ -6,17 +6,20 @@ import java.util.Scanner;
 
 import modelo.Bebida;
 import modelo.Cliente;
+import modelo.Estabelecimento;
 
 public class Main {
 
     public static Scanner sc = new Scanner(System.in);
     public static ArrayList <Cliente> clientes;
     public static ArrayList <Bebida> bebidas;
-
+    public static ArrayList <Estabelecimento> estabelecimentos;
+    
     public static void main(String[] args) {
     int caseSelect = 0;
     clientes = new ArrayList<Cliente>();
     bebidas = new ArrayList<Bebida>();
+    estabelecimentos = new ArrayList<Estabelecimento>();
 
 
     	do {
@@ -99,7 +102,7 @@ public class Main {
         System.out.println("Escolha uma opção\n" + "1.Cadastro de novo Cliente\n" + "2.Visualizar a lista de clientes\n"
                 + "3.Editar um cadastro\n" + "4.Deletar um Cliente\n" + "5.Cadastro de venda\n"
                 + "6.Cadastro de nova bebida\n" + "7.Visualizar a lista de bebidas\n" + "8.Editar uma bebida\n"
-                + "9.Deletar uma bebida\n");
+                + "9.Deletar uma bebida\n" + "10. Adicionar um novo estabelecimento\n");
     }
 
 }

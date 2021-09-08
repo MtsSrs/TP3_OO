@@ -110,7 +110,7 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [\nnomeCliente = " + nomeCliente + "\nenderecoCliente = " + enderecoCliente + "\ncpfCliente = "
-				+ cpfCliente + "\ntelefoneCliente = " + telefoneCliente + "\n]";
+		return "Cliente [\nNome do cliente = " + nomeCliente + "\nEndereco do cliente = " + enderecoCliente
+				+ "\nCPF docliente = " + cpfCliente + "\nTelefone do cliente = " + telefoneCliente + "\n]";
 	}
 }
