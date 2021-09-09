@@ -8,10 +8,10 @@ public class Cliente {
     private String nomeCliente;
     private String enderecoCliente;
     private String cpfCliente;
-    private String telefoneCliente; 
+    private Telefone telefoneCliente; 
 
 
-    public Cliente(String nomeCliente, String enderecoCliente, String cpfCliente, String telefoneCliente) {
+    public Cliente(String nomeCliente, String enderecoCliente, String cpfCliente, Telefone telefoneCliente) {
         this.nomeCliente = nomeCliente;
         this.enderecoCliente = enderecoCliente;
         this.cpfCliente = cpfCliente;
@@ -21,38 +21,38 @@ public class Cliente {
     public String getNomeCliente() {
         return nomeCliente;
     }
-	
+
 
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
     }
-	
+
 
     public String getEnderecoCliente() {
         return enderecoCliente;
     }
-	
+
 
     public void setEnderecoCliente(String enderecoCliente) {
         this.enderecoCliente = enderecoCliente;
     }
-	
+
 
     public String getCpfCliente() {
         return cpfCliente;
     }
-	
+
 
     public void setCpfCliente(String cpfCliente) {
         this.cpfCliente = cpfCliente;
     }
 
 
-    public String getTelefoneCliente() {
+    public Telefone getTelefoneCliente() {
         return telefoneCliente;
     }
 
-    public void setTelefoneCliente(String telefoneCliente) {
+    public void setTelefoneCliente(Telefone telefoneCliente) {
         this.telefoneCliente = telefoneCliente;
     }
 
@@ -67,7 +67,7 @@ public class Cliente {
         System.out.println("Digite o CPF do cliente: " + i + "º");
         String cpfCliente = Main.sc.nextLine();
 
-        String telefoneCliente = Telefone.cadastrarTelefone(i);
+        Telefone telefoneCliente = Telefone.cadastrarTelefone(i);
 
         Cliente cliente = new Cliente(nomeCliente, enderecoCliente, cpfCliente, telefoneCliente);
         Main.clientes.add(cliente);
@@ -92,7 +92,7 @@ for (int i = 0; i < Main.clientes.size(); i++) {
         System.out.println("Digite o CPF do cliente:");
         String cpfCliente = Main.sc.nextLine();
 
-        String telefoneCliente = Telefone.cadastrarTelefone(i);
+        Telefone telefoneCliente = Telefone.cadastrarTelefone(i);
 
         Cliente cliente = new Cliente(nomeCliente, enderecoCliente, cpfCliente, telefoneCliente);
         clientes.set(i, cliente);
@@ -107,7 +107,7 @@ for (int i = 0; i < Main.clientes.size(); i++) {
 
     @Override
     public String toString() {
-        return "Cliente [\nNome do cliente = " + nomeCliente + "\nEndereco do cliente = " + enderecoCliente 
+        return "Cliente [\n Nome do cliente = " + nomeCliente + "\nEndereco do cliente = " + enderecoCliente 
                 + "\nCPF do cliente = " + cpfCliente + "\nTelefone do cliente = " + telefoneCliente + "\n]";
     }
 }

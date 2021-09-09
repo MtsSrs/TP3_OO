@@ -8,9 +8,9 @@ public class Estabelecimento {
 
     private String enderecoEstabelecimento;
     private String cepEstabelecimento;
-    private String telefoneEstabelecimento;
+    private Telefone telefoneEstabelecimento;
 
-    public Estabelecimento(String enderecoEstabelecimento, String cepEstabelecimento, String telefoneEstabelecimento) {
+    public Estabelecimento(String enderecoEstabelecimento, String cepEstabelecimento, Telefone telefoneEstabelecimento) {
         this.enderecoEstabelecimento = enderecoEstabelecimento;
         this.cepEstabelecimento = cepEstabelecimento;
         this.telefoneEstabelecimento = telefoneEstabelecimento;
@@ -32,11 +32,11 @@ public class Estabelecimento {
         this.cepEstabelecimento = cepEstabelecimento;
     }
 
-    public String getTelefoneEstabelecimento() {
+    public Telefone getTelefoneEstabelecimento() {
         return telefoneEstabelecimento;
     }
 
-    public void setTelefoneEstabelecimento(String telefoneEstabelecimento) {
+    public void setTelefoneEstabelecimento(Telefone telefoneEstabelecimento) {
         this.telefoneEstabelecimento = telefoneEstabelecimento;
     }
 
@@ -47,7 +47,7 @@ public class Estabelecimento {
         System.out.println("Digite o CEP do estabelecimento: " + i + "º");
         String cepEstabelecimento = Main.sc.nextLine();
 
-        String telefoneEstabelecimento = Telefone.cadastrarTelefone(i);
+        Telefone telefoneEstabelecimento = Telefone.cadastrarTelefone(i);
 
         Estabelecimento estabelecimento = new Estabelecimento(enderecoEstabelecimento, cepEstabelecimento, 
                                                               telefoneEstabelecimento);
@@ -70,7 +70,7 @@ for (int i = 0; i < Main.estabelecimentos.size(); i++) {
             System.out.println("Digite o endereco do cliente:");
             String enderecoEstabelecimento = Main.sc.nextLine();
 
-            String telefoneEstabelecimento = Telefone.cadastrarTelefone(i);
+            Telefone telefoneEstabelecimento = Telefone.cadastrarTelefone(i);
 
             Estabelecimento estabelecimento = new Estabelecimento(nomeEstabelecimento, enderecoEstabelecimento, 
                                                                   telefoneEstabelecimento);
@@ -88,7 +88,5 @@ for (int i = 0; i < Main.estabelecimentos.size(); i++) {
         return "Estabelecimento [\nEndereco do estabelecimento = " + enderecoEstabelecimento + "\nCEP do estabelecimento = "
                 + cepEstabelecimento + "\nTelefone do estabelecimento = " + telefoneEstabelecimento + "\n]";
     }
-
-
 
 }

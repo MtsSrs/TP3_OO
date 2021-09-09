@@ -28,7 +28,7 @@ public class Telefone {
         this.numero = numero;
     }
 
-    public static String cadastrarTelefone(int i) {
+    public static Telefone cadastrarTelefone(int i) {
 
         System.out.println("Digite o DDD do telefone (apenas números): " + i + "º");
         String ddd = Main.sc.next();
@@ -36,7 +36,14 @@ public class Telefone {
         System.out.println("Digite o número do telefone (apenas números): " + i + "º");
         String numero = Main.sc.next();
 
-        return ("(" + ddd + ")" + numero);
+        Telefone telefone = new Telefone(ddd, numero);
+
+        return telefone;
+    }
+
+    @Override
+    public String toString() {
+        return ("(" + ddd + ") " + numero);
     }
 
 }

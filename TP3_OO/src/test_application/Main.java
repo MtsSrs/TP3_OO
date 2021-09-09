@@ -8,6 +8,7 @@ import modelo.Cliente;
 import modelo.Estabelecimento;
 import modelo.Estoque;
 import modelo.Pastel;
+import modelo.Telefone;
 
 public class Main {
 
@@ -28,8 +29,8 @@ public class Main {
 		estoque_bebida = new ArrayList<Integer>();
 		estabelecimentos = new ArrayList<Estabelecimento>();
 
-		clientes.add(new Cliente("Mateus", "Brasília", "11111111111", "(61)123456789"));
-		clientes.add(new Cliente("Matheus", "Valparaíso", "22222222222", "(61)987654321"));
+		clientes.add(new Cliente("Mateus", "Brasília", "11111111111", new Telefone("61", "123456789")));
+		clientes.add(new Cliente("Matheus", "Valparaíso", "22222222222", new Telefone("61", "987654321")));
 
 		bebidas.add(new Bebida("Água", (float) 4.99, 1, "Uma garrafa de água", "0", "Água", "500"));
 		bebidas.add(new Bebida("Coca-cola", (float) 7.99, 2, "Uma lata de Coca-cola", "85", "Refrigerante", "300"));
@@ -39,8 +40,8 @@ public class Main {
 		pasteis.add(new Pastel("Pastel de carne pequeno", (float) 13.99, 2, "Pastel recheado com carne", "149",
 				"Salgado", "10"));
 
-		estabelecimentos.add(new Estabelecimento("Brasília", "11111111", "(61)111112222"));
-		estabelecimentos.add(new Estabelecimento("Valparaíso", "22222222", "(61)222221111"));
+		estabelecimentos.add(new Estabelecimento("Brasília", "11111111", new Telefone("61", "111112222")));
+		estabelecimentos.add(new Estabelecimento("Valparaíso", "22222222", new Telefone("61", "222221111")));
 		
 		estoque_pastel.add(10);
 		estoque_pastel.add(20);
