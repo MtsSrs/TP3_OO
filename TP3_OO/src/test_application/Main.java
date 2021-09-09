@@ -42,7 +42,7 @@ public class Main {
 
 		estabelecimentos.add(new Estabelecimento("Brasília", "11111111", new Telefone("61", "111112222")));
 		estabelecimentos.add(new Estabelecimento("Valparaíso", "22222222", new Telefone("61", "222221111")));
-		
+
 		estoque_pastel.add(10);
 		estoque_pastel.add(20);
 		estoque_bebida.add(30);
@@ -55,12 +55,7 @@ public class Main {
 			switch (caseSelect) {
 			case 1:
 
-				System.out.println("Digite o número de clientes que serão cadastrados");
-				int size = sc.nextInt();
-				sc.nextLine();
-				for (int i = 0; i < size; i++) {
-					Cliente.cadastrarCliente(i);
-				}
+				Cliente.cadastrarCliente();
 
 				break;
 
@@ -73,36 +68,20 @@ public class Main {
 			case 3:
 
 				Cliente.visualizarClientes();
-				System.out.println("Digite o número do cliente desejado");
-				int i = sc.nextInt();
-				sc.nextLine();
-				while (i > clientes.size()) {
-					System.out.println("Não temos tantos clientes(ainda)\nDigite um novo número");
-					i = sc.nextInt();
-					sc.nextLine();
-				}
-				Cliente.editarCliente(i, clientes);
+				Cliente.editarCliente(clientes);
 
 				break;
 
 			case 4:
 
 				Cliente.visualizarClientes();
-				System.out.println("Digite o número do cliente desejado");
-				i = sc.nextInt();
-				sc.nextLine();
-				Cliente.deletarCliente(i, clientes);
+				Cliente.deletarCliente(clientes);
 
 				break;
 
 			case 5:
 
-				System.out.println("Digite o número de bebidas que serão cadastadas");
-				size = sc.nextInt();
-				sc.nextLine();
-				for (i = 0; i < size; i++) {
-					Bebida.cadastrarBebida(i);
-				}
+				Bebida.cadastrarBebida();
 
 				break;
 
@@ -115,36 +94,20 @@ public class Main {
 			case 7:
 
 				Bebida.visualizarBebidas();
-				System.out.println("Digite o número da bebida desejada");
-				i = sc.nextInt();
-				sc.nextLine();
-				while (i > bebidas.size()) {
-					System.out.println("Não temos tantas bebidas(ainda)\nDigite um novo número");
-					i = sc.nextInt();
-					sc.nextLine();
-				}
-				Bebida.editarBebida(i, bebidas);
+				Bebida.editarBebida(bebidas);
 
 				break;
 
 			case 8:
 
 				Bebida.visualizarBebidas();
-				System.out.println("Digite o número da bebida desejada");
-				i = sc.nextInt();
-				sc.nextLine();
-				Bebida.deletarBebida(i, bebidas);
+				Bebida.deletarBebida(bebidas);
 
 				break;
 
 			case 9:
 
-				System.out.println("Digite o número de pasteis que serão cadastrados");
-				size = sc.nextInt();
-				sc.nextLine();
-				for (i = 0; i < size; i++) {
-					Pastel.cadastrarPastel(i);
-				}
+				Pastel.cadastrarPastel();
 
 				break;
 
@@ -156,36 +119,20 @@ public class Main {
 			case 11:
 
 				Pastel.visualizarPastel();
-				System.out.println("Digite o número do pastel desejado");
-				i = sc.nextInt();
-				sc.nextLine();
-				while (i > pasteis.size()) {
-					System.out.println("Não temos tantos pastéis(ainda)\nDigite um novo número");
-					i = sc.nextInt();
-					sc.nextLine();
-				}
-				Pastel.editarPastel(i, pasteis);
+				Pastel.editarPastel(pasteis);
 
 				break;
 
 			case 12:
 
 				Pastel.visualizarPastel();
-				System.out.println("Digite o número do pastel desejado");
-				i = sc.nextInt();
-				sc.nextLine();
-				Pastel.deletarPastel(i, pasteis);
+				Pastel.deletarPastel(pasteis);
 
 				break;
 
 			case 13:
 
-				System.out.println("Digite o número de estabelecimentos que serão cadastrados");
-				size = sc.nextInt();
-				sc.nextLine();
-				for (i = 0; i < size; i++) {
-					Estabelecimento.cadastrarEstabelecimento(i);
-				}
+				Estabelecimento.cadastrarEstabelecimento();
 
 				break;
 
@@ -197,15 +144,7 @@ public class Main {
 			case 15:
 
 				Estabelecimento.visualizarEstabelecimentos();
-				System.out.println("Digite o número do estabelecimento desejado");
-				i = sc.nextInt();
-				sc.nextLine();
-				while (i > estabelecimentos.size()) {
-					System.out.println("Não temos tantos estabelecimentos(ainda)\nDigite um novo número");
-					i = sc.nextInt();
-					sc.nextLine();
-				}
-				Estabelecimento.editarEstabelecimento(i, estabelecimentos);
+				Estabelecimento.editarEstabelecimento(estabelecimentos);
 				;
 
 				break;
@@ -213,10 +152,7 @@ public class Main {
 			case 16:
 
 				Estabelecimento.visualizarEstabelecimentos();
-				System.out.println("Digite o número do estabelecimento desejado");
-				i = sc.nextInt();
-				sc.nextLine();
-				Estabelecimento.deletarEstabelecimento(i, estabelecimentos);
+				Estabelecimento.deletarEstabelecimento(estabelecimentos);
 
 				break;
 
@@ -229,12 +165,12 @@ public class Main {
 
 				Estoque.visualizarEstoqueProduto();
 				break;
-				
+
 			case 19:
-				
+
 				Estoque.deletarEstoque();
 				break;
-				
+
 			default:
 				System.out.println("error");
 				System.exit(0);

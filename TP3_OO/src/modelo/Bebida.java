@@ -31,7 +31,11 @@ public class Bebida extends Produto {
 		this.volumeBebida = volumeBebida;
 	}
 
-	public static void cadastrarBebida(int i) {
+	public static void cadastrarBebida() {
+		System.out.println("Digite o número de bebidas que serão cadastadas");
+		int size = Main.sc.nextInt();
+		Main.sc.nextLine();
+		for (int i = 0; i < size; i++) {
 		System.out.println("Digite o nome da bebida: " + i + "º");
 		String nomeProduto = Main.sc.nextLine();
 
@@ -62,6 +66,7 @@ public class Bebida extends Produto {
 				volumeBebida);
 		Main.estoque_bebida.add(estoqueBebida);
 		Main.bebidas.add(bebida);
+		}
 	}
 
 	public static void visualizarBebidas() {
@@ -80,7 +85,15 @@ public class Bebida extends Produto {
 		}
 	}
 
-	public static void editarBebida(int i, ArrayList<Bebida> bebidas) {
+	public static void editarBebida(ArrayList<Bebida> bebidas) {
+		System.out.println("Digite o número da bebida desejada");
+		int i = Main.sc.nextInt();
+		Main.sc.nextLine();
+		while (i > bebidas.size()) {
+			System.out.println("Não temos tantas bebidas(ainda)\nDigite um novo número");
+			i = Main.sc.nextInt();
+			Main.sc.nextLine();
+		}
 
 		System.out.println("Digite o nome da bebida: " + i + "º");
 		String nomeProduto = Main.sc.nextLine();
@@ -116,7 +129,11 @@ public class Bebida extends Produto {
 		System.out.println("Bebida editada\n");
 	}
 
-	public static void deletarBebida(int i, ArrayList<Bebida> bebidas) {
+	public static void deletarBebida(ArrayList<Bebida> bebidas) {
+		System.out.println("Digite o número da bebida desejada");
+		int i = Main.sc.nextInt();
+		Main.sc.nextLine();
+		
 		bebidas.remove(i);
 		Main.estoque_bebida.remove(i);
 		System.out.println("Bebida totalmente removida\n");

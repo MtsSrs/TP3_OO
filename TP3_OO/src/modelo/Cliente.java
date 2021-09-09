@@ -57,7 +57,13 @@ public class Cliente {
     }
 
 
-    public static void cadastrarCliente(int i) {
+    public static void cadastrarCliente() {
+    	
+    	System.out.println("Digite o número de clientes que serão cadastrados");
+		int size = Main.sc.nextInt();
+		Main.sc.nextLine();
+		
+		for (int i = 0; i < size; i++) {
         System.out.println("Digite o nome do cliente: " + i + "º");
         String nomeCliente = Main.sc.nextLine();
 
@@ -71,6 +77,7 @@ public class Cliente {
 
         Cliente cliente = new Cliente(nomeCliente, enderecoCliente, cpfCliente, telefoneCliente);
         Main.clientes.add(cliente);
+		}
     }
 
     public static void visualizarClientes() {
@@ -81,8 +88,17 @@ for (int i = 0; i < Main.clientes.size(); i++) {
         }
     }
 
-    public static void editarCliente(int i, ArrayList<Cliente> clientes) {
-
+    public static void editarCliente(ArrayList<Cliente> clientes) {
+    	
+    	System.out.println("Digite o número do cliente desejado");
+		int i = Main.sc.nextInt();
+		Main.sc.nextLine();
+		while (i > clientes.size()) {
+			System.out.println("Não temos tantos clientes(ainda)\nDigite um novo número");
+			i = Main.sc.nextInt();
+			Main.sc.nextLine();
+		}
+    	
         System.out.println("Digite o nome do cliente:");
         String nomeCliente = Main.sc.nextLine();
 
@@ -98,11 +114,24 @@ for (int i = 0; i < Main.clientes.size(); i++) {
         clientes.set(i, cliente);
         System.out.println("Cliente editado\n");
         }
+    
+    public static void visualizarNomeCliente() {
+        for (int i = 0; i < Main.clientes.size(); i++) {
+            System.out.print(i + " - ");
+            System.out.println(Main.clientes.get(i).getNomeCliente());
+            System.out.println("___");
+        }
+    }
 
-
-    public static void deletarCliente(int i, ArrayList<Cliente> clientes) {
-        clientes.remove(i);
+    public static void deletarCliente(ArrayList<Cliente> clientes) {
+    	
+    	System.out.println("Digite o número do cliente desejado");
+		int i = Main.sc.nextInt();
+		Main.sc.nextLine();
+    	
+    	clientes.remove(i);
         System.out.println("Cliente totalmente removido\n");
+        
     }
 
     @Override
