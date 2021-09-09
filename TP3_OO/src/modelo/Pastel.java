@@ -28,19 +28,24 @@ public class Pastel extends Produto {
 		int idProduto = Main.sc.nextInt();
 		Main.sc.nextLine();
 		
-		System.out.println("Digite a descrição do pastel: " + i + "º");
+		System.out.println("Digite a descrição do pastel: " + i );
 		String descricaoProduto = Main.sc.nextLine();
 		
-		System.out.println("Digite a caloria do pastel: " + i + "º");
+		System.out.println("Digite a caloria do pastel: " + i );
 		String caloriaProduto = Main.sc.nextLine();
 
-		System.out.println("Digite o sabor do pastel: " + i + "º");
+		System.out.println("Digite o sabor do pastel: " + i );
 		String saborPastel = Main.sc.nextLine();
 
-		System.out.println("Digite o comprimento do pastel: " + i + "º");
+		System.out.println("Digite o comprimento do pastel: " + i);
 		String comprimentoPastel = Main.sc.nextLine();
 
+		System.out.println("Digite a quantidade em estoque do pastel: " + i );
+		int estoquePastel = Main.sc.nextInt();
+		Main.sc.nextLine();
+		
 		Pastel pasteis = new Pastel(nomeProduto, precoProduto, idProduto, descricaoProduto, caloriaProduto, saborPastel, comprimentoPastel);
+		Main.estoque_pastel.add(estoquePastel);
 		Main.pasteis.add(pasteis);
 	}
 
@@ -48,7 +53,7 @@ public class Pastel extends Produto {
 		for (int i = 0; i < Main.pasteis.size(); i++) {
 			System.out.print(i + " - ");
 			System.out.println(Main.pasteis.get(i));
-			System.out.println("___________________________________");
+			System.out.println("___________________________________\n");
 		}
 	}
 
@@ -77,8 +82,13 @@ public class Pastel extends Produto {
 		System.out.println("Digite o comprimento do pastel: " + i + "º");
 		String comprimentoPastel = Main.sc.nextLine();
 		
+		System.out.println("Digite a quantidade em estoque do pastel: " + i );
+		int estoquePastel = Main.sc.nextInt();
+		Main.sc.nextLine();
+		
 		Pastel pastel = new Pastel(nomeProduto, precoProduto, idProduto, descricaoProduto, caloriaProduto, saborPastel, comprimentoPastel);
 		pasteis.set(i, pastel);
+		Main.estoque_pastel.set(i, estoquePastel);
 		System.out.println("Pastel editado\n");
 		
 	}
@@ -86,13 +96,14 @@ public class Pastel extends Produto {
 		for (int i = 0; i < Main.pasteis.size(); i++) {
 			System.out.print(i + " - ");
 			System.out.println(Main.pasteis.get(i).getNomeProduto());
-			System.out.println("___________________________________");
+			System.out.println("___________________________________\n");
 		}
 	}
 	
 	
 	public static void deletarPastel(int i, ArrayList<Pastel> pasteis) {
 		pasteis.remove(i);
+		Main.estoque_pastel.remove(i);
 		System.out.println("Pastel totalmente removido\n");
 	}
 

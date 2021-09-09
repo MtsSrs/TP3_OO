@@ -44,7 +44,8 @@ public class Main {
 		
 		estoque_pastel.add(10);
 		estoque_pastel.add(20);
-
+		estoque_bebida.add(30);
+		estoque_bebida.add(40);
 
 		do {
 			menuInicial();
@@ -227,7 +228,12 @@ public class Main {
 
 				Estoque.visualizarEstoqueProduto();
 				break;
-
+				
+			case 19:
+				
+				Estoque.deletarEstoque();
+				break;
+				
 			default:
 				System.out.println("error");
 				System.exit(0);
@@ -244,7 +250,7 @@ public class Main {
 				+ "9.Cadastrar Pastel\n" + "10.Visualizar a lista de pastéis\n" + "11.Editar um pastel\n"
 				+ "12.Deletar um pastel\n" + "13.Cadastrar novo estabelecimento\n" + "14.Visualizar lista de "
 				+ "Estabelecimentos" + "\n15.Editar um estabelecimento" + "\n16.Deletar um estabelecimento"
-				+ "\n17.Cadastra Estoque" + "\n18.Visualizar Estoque");
+				+ "\n17.Edita Estoque" + "\n18.Visualizar Estoque" + "\n19.Zerar Estoque");
 	}
 
 }

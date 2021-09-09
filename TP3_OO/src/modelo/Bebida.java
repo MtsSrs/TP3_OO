@@ -54,8 +54,13 @@ public class Bebida extends Produto {
 		System.out.println("Digite o volume da bebida: " + i + "º");
 		String volumeBebida = Main.sc.nextLine();
 		
+		System.out.println("Digite a quantidade em estoque da bebida: " + i );
+		int estoqueBebida = Main.sc.nextInt();
+		Main.sc.nextLine();
+		
 		Bebida bebida = new Bebida(nomeProduto, precoProduto, idProduto, descricaoProduto, caloriaProduto, tipoBebida,
 				volumeBebida);
+		Main.estoque_bebida.add(estoqueBebida);
 		Main.bebidas.add(bebida);
 	}
 
@@ -64,6 +69,14 @@ public class Bebida extends Produto {
 			System.out.print(i + "º - ");
 			System.out.println(Main.bebidas.get(i));
 			System.out.println("__");
+		}
+	}
+	
+	public static void visualizarNomeBebidaId() {
+		for (int i = 0; i < Main.bebidas.size(); i++) {
+			System.out.print(i + " - ");
+			System.out.println(Main.bebidas.get(i).getNomeProduto());
+			System.out.println("___________________________________");
 		}
 	}
 
@@ -90,16 +103,22 @@ public class Bebida extends Produto {
 
 		System.out.println("Digite o volume da bebida: " + i + "º");
 		String volumeBebida = Main.sc.nextLine();
+		
+		System.out.println("Digite a quantidade em estoque da bebida: " + i );
+		int estoqueBebida = Main.sc.nextInt();
+		Main.sc.nextLine();
 
 		Bebida bebida = new Bebida(nomeProduto, precoProduto, idProduto, descricaoProduto, caloriaProduto, tipoBebida,
 				volumeBebida);
 		
 		bebidas.set(i, bebida);
+		Main.estoque_bebida.set(i, estoqueBebida);
 		System.out.println("Bebida editada\n");
 	}
 
 	public static void deletarBebida(int i, ArrayList<Bebida> bebidas) {
 		bebidas.remove(i);
+		Main.estoque_bebida.remove(i);
 		System.out.println("Bebida totalmente removida\n");
 	}
 

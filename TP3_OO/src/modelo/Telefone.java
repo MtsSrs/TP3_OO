@@ -36,8 +36,6 @@ public class Telefone {
         System.out.println("Digite o número do telefone (apenas números): " + i + "º");
         String numero = Main.sc.next();
 
-        Telefone telefone = new Telefone(ddd, numero);
-
         return ("(" + ddd + ")" + numero);
     }
 

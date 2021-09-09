@@ -107,7 +107,7 @@ for (int i = 0; i < Main.clientes.size(); i++) {
 
     @Override
     public String toString() {
-        return "Cliente [\n Nome do cliente = " + nomeCliente + "\nEndereco do cliente = " + enderecoCliente 
+        return "Cliente [\nNome do cliente = " + nomeCliente + "\nEndereco do cliente = " + enderecoCliente 
                 + "\nCPF do cliente = " + cpfCliente + "\nTelefone do cliente = " + telefoneCliente + "\n]";
     }
 }
