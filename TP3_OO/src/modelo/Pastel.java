@@ -46,7 +46,7 @@ public class Pastel extends Produto {
 
 	public static void visualizarPastel() {
 		for (int i = 0; i < Main.pasteis.size(); i++) {
-			System.out.print(i + "º - ");
+			System.out.print(i + " - ");
 			System.out.println(Main.pasteis.get(i));
 			System.out.println("___________________________________");
 		}
@@ -82,6 +82,14 @@ public class Pastel extends Produto {
 		System.out.println("Pastel editado\n");
 		
 	}
+	public static void visualizarNomePastelId() {
+		for (int i = 0; i < Main.pasteis.size(); i++) {
+			System.out.print(i + " - ");
+			System.out.println(Main.pasteis.get(i).getNomeProduto());
+			System.out.println("___________________________________");
+		}
+	}
+	
 	
 	public static void deletarPastel(int i, ArrayList<Pastel> pasteis) {
 		pasteis.remove(i);
