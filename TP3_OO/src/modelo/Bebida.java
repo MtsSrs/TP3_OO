@@ -36,37 +36,39 @@ public class Bebida extends Produto {
 		int size = Main.sc.nextInt();
 		Main.sc.nextLine();
 		for (int i = 0; i < size; i++) {
-		System.out.println("Digite o nome da bebida " + (i+1));
-		String nomeProduto = Main.sc.nextLine();
+			System.out.println("Digite o nome da bebida " + (i + 1));
+			String nomeProduto = Main.sc.nextLine();
 
-		System.out.println("Digite o preço da bebida " + (i+1));
-		float precoProduto = Main.sc.nextFloat();
+			System.out.println("Digite o preço da bebida " + (i + 1));
+			float precoProduto = Main.sc.nextFloat();
 
-		System.out.println("Digite o ID da bebida " + (i+1));
-		int idProduto = Main.sc.nextInt();
-		Main.sc.nextLine();
+			System.out.println("Digite o ID da bebida " + (i + 1));
+			int idProduto = Main.sc.nextInt();
+			Main.sc.nextLine();
 
-		System.out.println("Digite a descrição da bebida " + (i+1));
-		String descricaoProduto = Main.sc.nextLine();
+			System.out.println("Digite a descrição da bebida " + (i + 1));
+			String descricaoProduto = Main.sc.nextLine();
 
-		System.out.println("Digite as calorias da bebida " + (i+1));
-		String caloriaProduto = Main.sc.nextLine();
+			System.out.println("Digite as calorias da bebida " + (i + 1));
+			String caloriaProduto = Main.sc.nextLine();
 
-		System.out.println("Digite o tipo da bebida " + (i+1));
-		String tipoBebida = Main.sc.nextLine();
+			System.out.println("Digite o tipo da bebida " + (i + 1));
+			String tipoBebida = Main.sc.nextLine();
 
-		System.out.println("Digite o volume da bebida " + (i+1));
-		String volumeBebida = Main.sc.nextLine();
-		
-		System.out.println("Digite a quantidade em estoque da bebida " + (i+1));
-		int estoqueBebida = Main.sc.nextInt();
-		Main.sc.nextLine();
-		
-		Bebida bebida = new Bebida(nomeProduto, precoProduto, idProduto, descricaoProduto, caloriaProduto, tipoBebida,
-				volumeBebida);
-		Main.estoque_bebida.add(estoqueBebida);
-		Main.bebidas.add(bebida);
+			System.out.println("Digite o volume da bebida " + (i + 1));
+			String volumeBebida = Main.sc.nextLine();
+
+			System.out.println("Digite a quantidade em estoque da bebida " + (i + 1));
+			int estoqueBebida = Main.sc.nextInt();
+			Main.sc.nextLine();
+
+			Bebida bebida = new Bebida(nomeProduto, precoProduto, idProduto, descricaoProduto, caloriaProduto,
+					tipoBebida, volumeBebida);
+			Main.estoque_bebida.add(estoqueBebida);
+			Main.bebidas.add(bebida);
+
 		}
+		System.out.println("Bebida Cadastrada.... Retornando");
 	}
 
 	public static void visualizarBebidas() {
@@ -76,7 +78,7 @@ public class Bebida extends Produto {
 			System.out.println("__________________________________________");
 		}
 	}
-	
+
 	public static void visualizarNomeBebidaId() {
 		for (int i = 0; i < Main.bebidas.size(); i++) {
 			System.out.print("\nBebida - " + i + "\n");
@@ -116,14 +118,14 @@ public class Bebida extends Produto {
 
 		System.out.println("Digite o volume da bebida");
 		String volumeBebida = Main.sc.nextLine();
-		
+
 		System.out.println("Digite a quantidade em estoque da bebida");
 		int estoqueBebida = Main.sc.nextInt();
 		Main.sc.nextLine();
 
 		Bebida bebida = new Bebida(nomeProduto, precoProduto, idProduto, descricaoProduto, caloriaProduto, tipoBebida,
 				volumeBebida);
-		
+
 		bebidas.set(i, bebida);
 		Main.estoque_bebida.set(i, estoqueBebida);
 		System.out.println("Bebida editada\n");
@@ -133,7 +135,7 @@ public class Bebida extends Produto {
 		System.out.println("Digite o número da bebida desejada");
 		int i = Main.sc.nextInt();
 		Main.sc.nextLine();
-		
+
 		bebidas.remove(i);
 		Main.estoque_bebida.remove(i);
 		System.out.println("Bebida totalmente removida\n");
@@ -141,9 +143,9 @@ public class Bebida extends Produto {
 
 	@Override
 	public String toString() {
-		return  "\nNome = " + nomeProduto + "\nPreço = " + precoProduto + "\nID = " + +idProduto
-				+ "\nDescrição = " + descricaoProduto + "\nCalorias = " + caloriaProduto + "\nTipo = " + tipoBebida
-				+ "\nVolume = " + volumeBebida + "ml\n";
+		return "\nNome = " + nomeProduto + "\nPreço = " + precoProduto + "\nID = " + +idProduto + "\nDescrição = "
+				+ descricaoProduto + "\nCalorias = " + caloriaProduto + "\nTipo = " + tipoBebida + "\nVolume = "
+				+ volumeBebida + "ml\n";
 	}
 
 }

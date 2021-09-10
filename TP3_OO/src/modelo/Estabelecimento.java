@@ -59,6 +59,7 @@ public class Estabelecimento {
 					telefoneEstabelecimento);
 			Main.estabelecimentos.add(estabelecimento);
 		}
+		System.out.println("Operação Concluida...Aguarde");
 	}
 
 	public static void visualizarEstabelecimentos() {

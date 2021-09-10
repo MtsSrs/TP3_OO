@@ -20,30 +20,30 @@ public class Pastel extends Produto {
 		int size = Main.sc.nextInt();
 		Main.sc.nextLine();
 		for (int i = 0; i < size; i++) {
-			System.out.println("Digite o nome do Pastel " + (i+1));
+			System.out.println("Digite o nome do Pastel " + (i + 1));
 			String nomeProduto = Main.sc.nextLine();
 
-			System.out.println("Digite o Preço do pastel " + (i+1));
+			System.out.println("Digite o Preço do pastel " + (i + 1));
 			float precoProduto = Main.sc.nextFloat();
 			Main.sc.nextLine();
 
-			System.out.println("Digite o id do pastel " + (i+1));
+			System.out.println("Digite o id do pastel " + (i + 1));
 			int idProduto = Main.sc.nextInt();
 			Main.sc.nextLine();
 
-			System.out.println("Digite a descrição do pastel " + (i+1));
+			System.out.println("Digite a descrição do pastel " + (i + 1));
 			String descricaoProduto = Main.sc.nextLine();
 
-			System.out.println("Digite a caloria do pastel " + (i+1));
+			System.out.println("Digite a caloria do pastel " + (i + 1));
 			String caloriaProduto = Main.sc.nextLine();
 
-			System.out.println("Digite o sabor do pastel (Doce ou Salgado) " + (i+1));
+			System.out.println("Digite o sabor do pastel (Doce ou Salgado) " + (i + 1));
 			String saborPastel = Main.sc.nextLine();
 
-			System.out.println("Digite o comprimento do pastel " + (i+1));
+			System.out.println("Digite o comprimento do pastel " + (i + 1));
 			String comprimentoPastel = Main.sc.nextLine();
 
-			System.out.println("Digite a quantidade em estoque do pastel " + (i+1));
+			System.out.println("Digite a quantidade em estoque do pastel " + (i + 1));
 			int estoquePastel = Main.sc.nextInt();
 			Main.sc.nextLine();
 
@@ -51,7 +51,9 @@ public class Pastel extends Produto {
 					saborPastel, comprimentoPastel);
 			Main.estoque_pastel.add(estoquePastel);
 			Main.pasteis.add(pasteis);
+
 		}
+		System.out.println("Pastel Cadastrado... Aguarde");
 	}
 
 	public static void visualizarPastel() {
@@ -120,12 +122,12 @@ public class Pastel extends Produto {
 		System.out.println("Digite o número do pastel desejado");
 		int i = Main.sc.nextInt();
 		Main.sc.nextLine();
-		
+
 		pasteis.remove(i);
 		Main.estoque_pastel.remove(i);
 		System.out.println("Pastel totalmente removido\n");
 	}
-	
+
 	public static void buscarPastelPedido(ArrayList<Pastel> pasteis) {
 		System.out.println("\nDigite o sabor (Salgado ou Doce)");
 		String nome = Main.sc.nextLine();
@@ -161,10 +163,10 @@ public class Pastel extends Produto {
 
 	@Override
 	public String toString() {
-		return  "\nSabor do pastel = " + saborPastel + "\nComprimento do pastel = " + comprimentoPastel
-				+ " cm\nNome do produto = " + nomeProduto + "\nPreço do produto = R$ " + precoProduto + "\nID do produto = "
-				+ idProduto + "\nDescrição do produto = " + descricaoProduto + "\nValor calórico = " + caloriaProduto
-				+ " kcal\n";
+		return "\nSabor do pastel = " + saborPastel + "\nComprimento do pastel = " + comprimentoPastel
+				+ " cm\nNome do produto = " + nomeProduto + "\nPreço do produto = R$ " + precoProduto
+				+ "\nID do produto = " + idProduto + "\nDescrição do produto = " + descricaoProduto
+				+ "\nValor calórico = " + caloriaProduto + " kcal\n";
 	}
 
 }
