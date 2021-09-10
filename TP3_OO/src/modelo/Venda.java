@@ -1,7 +1,5 @@
 package modelo;
 
-import java.util.ArrayList;
-
 import test_application.Main;
 
 public class Venda {
@@ -41,31 +39,52 @@ public class Venda {
     }
 
     public static void vendaCliente() {
-
+    	int aux = 0;
+    	float preco1 = 0;
+    	float preco2 = 0;
         Cliente.visualizarNomeCliente();
 
         System.out.println("Digite o número do cliente que realizou a compra");
         int selecaoCliente = Main.sc.nextInt();
 
         Pastel.visualizarNomePastelId();
-
-        System.out.println("Digite o número do pastel comprado");
-        int selecaoPastel = Main.sc.nextInt();
+        
+        do {
+	        System.out.println("Digite o número do pastel comprado");
+	        int selecaoPastel = Main.sc.nextInt();
+	        
+	        System.out.println("Digite a quantidade comprada");
+	        int quantidadePastel = Main.sc.nextInt();
+	        
+	        preco1 = preco1+quantidadePastel*Main.pasteis.get(selecaoPastel).getPrecoProduto();
+	        
+	        System.out.println("Deseja cadastrar outro pastel na compra? 1-Sim/2-Não");
+	        aux = Main.sc.nextInt();
+        } while (aux != 2);
+        
 
         Bebida.visualizarNomeBebidaId();
-        System.out.println("Digite o número da bebida comprada");
-        int selecaoBebida = Main.sc.nextInt();
+	        do {
+	        	System.out.println("Digite o número da bebida comprada");
+	        int selecaoBebida = Main.sc.nextInt();
+	        
+	        System.out.println("Digite a quantidade comprada");
+	        int quantidadeBebida = Main.sc.nextInt();
+	        
+	        preco2 = preco2+quantidadeBebida*Main.bebidas.get(selecaoBebida).getPrecoProduto();
+	        
+	        System.out.println("Deseja cadastrar outra bebida na compra? 1-Sim/2-Não");
+	        aux = Main.sc.nextInt();
+        } while (aux !=2);
+        
 
         Cliente clienteVenda = Main.clientes.get(selecaoCliente);
         //setPrecoVenda(Main.pasteis.get(selecaoPastel).getPrecoProduto() + Main.bebidas.get(selecaoBebida).getPrecoProduto());
 
-        float preco1 = Main.pasteis.get(selecaoPastel).getPrecoProduto();
-        float preco2 = Main.bebidas.get(selecaoBebida).getPrecoProduto();
-
         int idVenda = Main.vendas.size();
 
         Venda venda = new Venda(idVenda, clienteVenda, (preco1 + preco2));
-Main.vendas.add(venda);
+        Main.vendas.add(venda);
 
     }
 
@@ -88,35 +107,57 @@ Main.vendas.add(venda);
             Main.sc.nextLine();
         }
 
+        int aux = 0;
+    	float preco1 = 0;
+    	float preco2 = 0;
         Cliente.visualizarNomeCliente();
 
         System.out.println("Digite o número do cliente que realizou a compra");
         int selecaoCliente = Main.sc.nextInt();
 
         Pastel.visualizarNomePastelId();
-
-        System.out.println("Digite o número do pastel comprado");
-        int selecaoPastel = Main.sc.nextInt();
+        
+        do {
+	        System.out.println("Digite o número do pastel comprado");
+	        int selecaoPastel = Main.sc.nextInt();
+	        
+	        System.out.println("Digite a quantidade comprada");
+	        int quantidadePastel = Main.sc.nextInt();
+	        
+	        preco1 = preco1+quantidadePastel*Main.pasteis.get(selecaoPastel).getPrecoProduto();
+	        
+	        System.out.println("Deseja cadastrar outro pastel na compra? 1-Sim/2-Não");
+	        aux = Main.sc.nextInt();
+        } while (aux != 2);
+        
 
         Bebida.visualizarNomeBebidaId();
-        System.out.println("Digite o número da bebida comprada");
-        int selecaoBebida = Main.sc.nextInt();
+	        do {
+	        	System.out.println("Digite o número da bebida comprada");
+	        int selecaoBebida = Main.sc.nextInt();
+	        
+	        System.out.println("Digite a quantidade comprada");
+	        int quantidadeBebida = Main.sc.nextInt();
+	        
+	        preco2 = preco2+quantidadeBebida*Main.bebidas.get(selecaoBebida).getPrecoProduto();
+	        
+	        System.out.println("Deseja cadastrar outra bebida na compra? 1-Sim/2-Não");
+	        aux = Main.sc.nextInt();
+        } while (aux !=2);
+        
 
         Cliente clienteVenda = Main.clientes.get(selecaoCliente);
-
-        float preco1 = Main.pasteis.get(selecaoPastel).getPrecoProduto();
-        float preco2 = Main.bebidas.get(selecaoBebida).getPrecoProduto();
+        //setPrecoVenda(Main.pasteis.get(selecaoPastel).getPrecoProduto() + Main.bebidas.get(selecaoBebida).getPrecoProduto());
 
         int idVenda = Main.vendas.get(i).getIdVenda();
 
         Venda venda = new Venda(idVenda, clienteVenda, (preco1 + preco2));
         Main.vendas.set(i, venda);
-        System.out.println("Venda editada\n");
     }
 
     public static void deletarVenda() {
         visualizarVendas();
-        System.out.println("Digite o número do cliente desejado");
+        System.out.println("Digite o número da venda desejado");
         int i = Main.sc.nextInt();
         Main.sc.nextLine();
         Main.vendas.remove(i);
@@ -126,7 +167,7 @@ Main.vendas.add(venda);
     @Override
 public String toString() {
         return "Venda [\nID da venda = " + idVenda + "\n" + Main.clientes.get(idVenda).getNomeCliente() 
-                + "\nPreço total:" + precoVenda + "]";
+                + "\nPreço total:" + precoVenda + " reais]";
     }
 
 }

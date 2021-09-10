@@ -131,6 +131,10 @@ public class Estoque {
 		}
 
 	}
+	
+	public static void filtrarEstoque() {
+		
+	}
 
 	public Produto[] getProduto() {
 		return produto;
