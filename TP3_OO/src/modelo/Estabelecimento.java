@@ -82,7 +82,7 @@ public class Estabelecimento {
 		System.out.println("Digite o nome do estabelecimento:");
 		String nomeEstabelecimento = Main.sc.nextLine();
 
-		System.out.println("Digite o endereco do cliente:");
+		System.out.println("Digite o endereco do estabelcimento:");
 		String enderecoEstabelecimento = Main.sc.nextLine();
 
 		Telefone telefoneEstabelecimento = Telefone.cadastrarTelefone(i);
