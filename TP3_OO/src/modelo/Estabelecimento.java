@@ -47,10 +47,10 @@ public class Estabelecimento {
 		int size = Main.sc.nextInt();
 		Main.sc.nextLine();
 		for (int i = 0; i < size; i++) {
-			System.out.println("Digite o endereço do estabelecimento: " + i + "º");
+			System.out.println("Digite o endereço do estabelecimento " + (i+1));
 			String enderecoEstabelecimento = Main.sc.nextLine();
 
-			System.out.println("Digite o CEP do estabelecimento: " + i + "º");
+			System.out.println("Digite o CEP do estabelecimento " + (i+1));
 			String cepEstabelecimento = Main.sc.nextLine();
 
 			Telefone telefoneEstabelecimento = Telefone.cadastrarTelefone(i);
@@ -63,9 +63,9 @@ public class Estabelecimento {
 
 	public static void visualizarEstabelecimentos() {
 		for (int i = 0; i < Main.estabelecimentos.size(); i++) {
-			System.out.print(i + "º - ");
+			System.out.print("\nID Estabelecimento - " + i + "\n");
 			System.out.println(Main.estabelecimentos.get(i));
-			System.out.println("__");
+			System.out.println("__________________________________________");
 		}
 	}
 
@@ -102,9 +102,9 @@ public class Estabelecimento {
 
 	@Override
 	public String toString() {
-		return "Estabelecimento [\nEndereco do estabelecimento = " + enderecoEstabelecimento
+		return "\nEndereco do estabelecimento = " + enderecoEstabelecimento
 				+ "\nCEP do estabelecimento = " + cepEstabelecimento + "\nTelefone do estabelecimento = "
-				+ telefoneEstabelecimento + "\n]";
+				+ telefoneEstabelecimento + "\n";
 	}
 
 }

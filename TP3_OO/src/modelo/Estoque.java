@@ -13,43 +13,43 @@ public class Estoque {
 	}
 
 	public static void cadastrarEstoqueProduto() {
-		System.out.println("Digite - 1 - para cadastrar pastéis \nDigite - 2 - para cadastrar bebidas\n");
+		System.out.println("\nDigite - 1 - para cadastrar pastéis \nDigite - 2 - para cadastrar bebidas\n");
 		int num = Main.sc.nextInt();
 		Main.sc.nextLine();
 		if (num == 1) {
 			System.out.println("Lista com nome e Id dos pastéis\n");
 			Pastel.visualizarNomePastelId();
 
-			System.out.println("\nDigite o número do item desejado para cadastrar uma nova quantidade");
+			System.out.println("\nDigite o número do item desejado para cadastrar uma nova\nquantidade");
 			int idQuant = Main.sc.nextInt();
 			Main.sc.nextLine();
 
-			System.out.println("Digite quantas unidades serão adicionadas no estoque do item: "
+			System.out.println("Digite quantas unidades serão adicionadas no estoque do\nitem: "
 					+ Main.pasteis.get(idQuant).getNomeProduto());
 			int estQuant = Main.sc.nextInt();
 			Main.sc.nextLine();
 
 			Main.estoque_pastel.set(idQuant, estQuant);
 
-			System.out.println("Operação Concluida");
+			System.out.println("Operação Concluída");
 			return;
 		}
 		if (num == 2) {
 			System.out.println("Lista com nome e Id das bebidas");
 			Bebida.visualizarNomeBebidaId();
 
-			System.out.println("\nDigite o número do item desejado para cadastrar uma nova quantidade");
+			System.out.println("\nDigite o número do item desejado para cadastrar uma nova\nquantidade");
 			int idQuant = Main.sc.nextInt();
 			Main.sc.nextLine();
 
-			System.out.println("Digite quantas unidades serão adicionadas no estoque do item: "
+			System.out.println("Digite quantas unidades serão adicionadas no estoque do\nitem: "
 					+ Main.bebidas.get(idQuant).getNomeProduto());
 			int estQuant = Main.sc.nextInt();
 			Main.sc.nextLine();
 
 			Main.estoque_bebida.set(idQuant, estQuant);
 
-			System.out.println("Operação Concluida");
+			System.out.println("Operação Concluída");
 			return;
 		} else {
 
@@ -59,7 +59,7 @@ public class Estoque {
 	}
 
 	public static void visualizarEstoqueProduto() {
-		System.out.println("Digite - 1 - para visualizar pastéis \nDigite - 2 - para visualizar bebidas\n");
+		System.out.println("\nDigite - 1 - para visualizar pastéis \nDigite - 2 - para visualizar bebidas\n");
 		int num = Main.sc.nextInt();
 		Main.sc.nextLine();
 		if (num == 1) {
@@ -89,7 +89,7 @@ public class Estoque {
 	}
 
 	public static void deletarEstoque() {
-		System.out.println("Digite - 1 - para visualizar pastéis \nDigite - 2 - para visualizar bebidas\n");
+		System.out.println("\nDigite - 1 - para visualizar pastéis \nDigite - 2 - para visualizar bebidas\n");
 		int num = Main.sc.nextInt();
 		Main.sc.nextLine();
 		if (num == 1) {

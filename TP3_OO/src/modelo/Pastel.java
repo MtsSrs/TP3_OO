@@ -20,30 +20,30 @@ public class Pastel extends Produto {
 		int size = Main.sc.nextInt();
 		Main.sc.nextLine();
 		for (int i = 0; i < size; i++) {
-			System.out.println("Digite o nome do Pastel: " + i + "º");
+			System.out.println("Digite o nome do Pastel " + (i+1));
 			String nomeProduto = Main.sc.nextLine();
 
-			System.out.println("Digite o Preço do pastel: " + i + "º");
+			System.out.println("Digite o Preço do pastel " + (i+1));
 			float precoProduto = Main.sc.nextFloat();
 			Main.sc.nextLine();
 
-			System.out.println("Digite o id do pastel: " + i + "º");
+			System.out.println("Digite o id do pastel " + (i+1));
 			int idProduto = Main.sc.nextInt();
 			Main.sc.nextLine();
 
-			System.out.println("Digite a descrição do pastel: " + i);
+			System.out.println("Digite a descrição do pastel " + (i+1));
 			String descricaoProduto = Main.sc.nextLine();
 
-			System.out.println("Digite a caloria do pastel: " + i);
+			System.out.println("Digite a caloria do pastel " + (i+1));
 			String caloriaProduto = Main.sc.nextLine();
 
-			System.out.println("Digite o sabor do pastel: " + i);
+			System.out.println("Digite o sabor do pastel (Doce ou Salgado) " + (i+1));
 			String saborPastel = Main.sc.nextLine();
 
-			System.out.println("Digite o comprimento do pastel: " + i);
+			System.out.println("Digite o comprimento do pastel " + (i+1));
 			String comprimentoPastel = Main.sc.nextLine();
 
-			System.out.println("Digite a quantidade em estoque do pastel: " + i);
+			System.out.println("Digite a quantidade em estoque do pastel " + (i+1));
 			int estoquePastel = Main.sc.nextInt();
 			Main.sc.nextLine();
 
@@ -56,7 +56,7 @@ public class Pastel extends Produto {
 
 	public static void visualizarPastel() {
 		for (int i = 0; i < Main.pasteis.size(); i++) {
-			System.out.print(i + " - ");
+			System.out.print("Pastel - " + i + "\n");
 			System.out.println(Main.pasteis.get(i));
 			System.out.println("___________________________________\n");
 		}
@@ -73,30 +73,30 @@ public class Pastel extends Produto {
 			Main.sc.nextLine();
 		}
 
-		System.out.println("Digite o nome do Pastel: " + i + "º");
+		System.out.println("Digite o nome do Pastel");
 		String nomeProduto = Main.sc.nextLine();
 
-		System.out.println("Digite o Preço do pastel: " + i + "º");
+		System.out.println("Digite o Preço do pastel");
 		float precoProduto = Main.sc.nextFloat();
 		Main.sc.nextLine();
 
-		System.out.println("Digite o id do pastel: " + i + "º");
+		System.out.println("Digite o id do pastel");
 		int idProduto = Main.sc.nextInt();
 		Main.sc.nextLine();
 
-		System.out.println("Digite a descrição do pastel: " + i + "º");
+		System.out.println("Digite a descrição do pastel");
 		String descricaoProduto = Main.sc.nextLine();
 
-		System.out.println("Digite a caloria do pastel: " + i + "º");
+		System.out.println("Digite a caloria do pastel");
 		String caloriaProduto = Main.sc.nextLine();
 
-		System.out.println("Digite o sabor do pastel: " + i + "º");
+		System.out.println("Digite o sabor do pastel (Doce ou Salgaodo)");
 		String saborPastel = Main.sc.nextLine();
 
-		System.out.println("Digite o comprimento do pastel: " + i + "º");
+		System.out.println("Digite o comprimento do pastel");
 		String comprimentoPastel = Main.sc.nextLine();
 
-		System.out.println("Digite a quantidade em estoque do pastel: " + i);
+		System.out.println("Digite a quantidade em estoque do pastel");
 		int estoquePastel = Main.sc.nextInt();
 		Main.sc.nextLine();
 
@@ -127,7 +127,7 @@ public class Pastel extends Produto {
 	}
 	
 	public static void buscarPastelPedido(ArrayList<Pastel> pasteis) {
-		System.out.println("Digite o nome do sabor");
+		System.out.println("\nDigite o sabor (Salgado ou Doce)");
 		String nome = Main.sc.nextLine();
 		try {
 			for (Pastel p : pasteis) {
@@ -161,10 +161,10 @@ public class Pastel extends Produto {
 
 	@Override
 	public String toString() {
-		return "Pastel [\nsaborPastel = " + saborPastel + "\ncomprimentoPastel = " + comprimentoPastel
-				+ " cm\nnomeProduto = " + nomeProduto + "\nprecoProduto = R$ " + precoProduto + "\nidProduto = "
-				+ idProduto + "\ndescricaoProduto = " + descricaoProduto + "\ncaloriaProduto = " + caloriaProduto
-				+ " kcal\n" + "]";
+		return  "\nSabor do pastel = " + saborPastel + "\nComprimento do pastel = " + comprimentoPastel
+				+ " cm\nNome do produto = " + nomeProduto + "\nPreço do produto = R$ " + precoProduto + "\nID do produto = "
+				+ idProduto + "\nDescrição do produto = " + descricaoProduto + "\nValor calórico = " + caloriaProduto
+				+ " kcal\n";
 	}
 
 }

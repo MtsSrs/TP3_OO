@@ -39,14 +39,14 @@ public class Venda {
         this.precoVenda = precoVenda;
     }
 
-    public static void vendaCliente() {
+	public static void vendaCliente() {
     	int aux = 0, estoquePastel, estoqueBebida;
     	float preco1 = 0;
     	float preco2 = 0;
     	
         Cliente.visualizarNomeCliente();
 
-        System.out.println("Digite o número do cliente que realizou a compra");
+        System.out.println("\nDigite o número do cliente que realizou a compra");
         int selecaoCliente = Main.sc.nextInt();
 
         Pastel.visualizarNomePastelId();
@@ -61,7 +61,7 @@ public class Venda {
 	        estoquePastel = Main.estoque_pastel.get(selecaoPastel) - quantidadePastel;
 	        
 	        if(estoquePastel < 0) {
-	        	System.out.println("\n=>Desculpe mas não há pasteis o bastante no estoque, retornando ao Menu<=\n");
+	        	System.out.println("\n=>Desculpe mas não há pasteis o bastante no estoque<=\n=>Retornando ao Menu<=\n");
 	        	return;
 	        } else {
 	        
@@ -78,7 +78,7 @@ public class Venda {
 
         Bebida.visualizarNomeBebidaId();
 	        do {
-	        	System.out.println("Digite o número da bebida comprada");
+	        System.out.println("Digite o número da bebida comprada");
 	        int selecaoBebida = Main.sc.nextInt();
 	        
 	        System.out.println("Digite a quantidade comprada");
@@ -87,7 +87,7 @@ public class Venda {
 	        estoqueBebida = Main.estoque_bebida.get(selecaoBebida) - quantidadeBebida;
 	        
 	        if(estoqueBebida < 0) {
-	        	System.out.println("\n=>Desculpe mas não há bebidas o bastante no estoque, retornando ao Menu<=\n");
+	        	System.out.println("\n=>Desculpe mas não há bebidas o bastante no estoque\nretornando ao Menu<=\n");
 	        	return;
 	        } else {
 	        preco2 = preco2+quantidadeBebida*Main.bebidas.get(selecaoBebida).getPrecoProduto();
@@ -101,7 +101,7 @@ public class Venda {
         
 
         Cliente clienteVenda = Main.clientes.get(selecaoCliente);
-
+        
         int idVenda = Main.vendas.size();
 
         Venda venda = new Venda(idVenda, clienteVenda, (preco1 + preco2));
@@ -127,6 +127,23 @@ public class Venda {
             i = Main.sc.nextInt();
             Main.sc.nextLine();
         }
+        Pastel.visualizarNomePastelId();
+        
+        System.out.println("Digite o número do pastel cadastrado previamente na venda a ser editada");
+        int selecaoPastel = Main.sc.nextInt();
+        
+        System.out.println("Digite a quantidade de pasteis cadastrados previamente na venda a ser editada");
+        int quantidadePastel = Main.sc.nextInt();
+        Main.estoque_pastel.set(i, Main.estoque_pastel.get(i)+quantidadePastel);
+        
+        Bebida.visualizarNomeBebidaId();
+        
+        System.out.println("Digite o número da bebida cadastrada previamente na venda a ser editada");
+        int selecaoBebida = Main.sc.nextInt();
+        
+        System.out.println("Digite a quantidade de bebidas cadastradas previamente na venda a ser editada");
+        int quantidadeBebida = Main.sc.nextInt();
+        Main.estoque_bebida.set(i, Main.estoque_bebida.get(i)+quantidadeBebida);
 
         int aux = 0, estoquePastel, estoqueBebida;
     	float preco1 = 0;
@@ -140,10 +157,10 @@ public class Venda {
         
         do {
 	        System.out.println("Digite o número do pastel comprado");
-	        int selecaoPastel = Main.sc.nextInt();
+	        selecaoPastel = Main.sc.nextInt();
 	        
 	        System.out.println("Digite a quantidade comprada");
-	        int quantidadePastel = Main.sc.nextInt();
+	        quantidadePastel = Main.sc.nextInt();
 	        
 	        estoquePastel = Main.estoque_pastel.get(selecaoPastel) - quantidadePastel;
 	        
@@ -166,10 +183,10 @@ public class Venda {
         Bebida.visualizarNomeBebidaId();
 	        do {
 	        	System.out.println("Digite o número da bebida comprada");
-	        int selecaoBebida = Main.sc.nextInt();
+	        selecaoBebida = Main.sc.nextInt();
 	        
 	        System.out.println("Digite a quantidade comprada");
-	        int quantidadeBebida = Main.sc.nextInt();
+	        quantidadeBebida = Main.sc.nextInt();
 	        
 	        estoqueBebida = Main.estoque_bebida.get(selecaoBebida) - quantidadeBebida;
 	        
@@ -206,8 +223,8 @@ public class Venda {
 
     @Override
 public String toString() {
-        return "Venda [\nID da venda = " + idVenda + "\n" + Main.clientes.get(idVenda).getNomeCliente() 
-                + "\nPreço total:" + precoVenda + " reais]";
+        return "Venda [\nID da venda = " + idVenda + "\nCliente = " + Main.clientes.get(idVenda).getNomeCliente() 
+                + "\nPreço total = " + precoVenda + " reais]";
     }
 
 	public Estoque getEstoqueVenda() {

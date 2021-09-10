@@ -153,7 +153,6 @@ public class Main {
 
 				Estabelecimento.visualizarEstabelecimentos();
 				Estabelecimento.editarEstabelecimento(estabelecimentos);
-				;
 
 				break;
 
@@ -206,6 +205,7 @@ public class Main {
 				break;
 			
 			case 25:
+				System.out.println("\nPrograma finalizado");
 				break;
 				
 			default:
@@ -218,15 +218,15 @@ public class Main {
 	}
 
 	public static void menuInicial() {
-		System.out.println("Escolha uma opção\n" + "1.Cadastro de novo Cliente\n" + "2.Visualizar a lista de clientes\n"
-				+ "3.Editar um cadastro\n" + "4.Deletar um Cliente\n" + "5.Cadastro de nova bebida\n"
+		System.out.println("\nEscolha uma opção:\n" + "1.Cadastro de novo Cliente\n" + "2.Visualizar a lista de clientes\n"
+				+ "3.Editar um cadastro de cliente\n" + "4.Deletar um Cliente\n" + "5.Cadastro de nova bebida\n"
 				+ "6.Visualizar a lista de bebidas\n" + "7.Editar uma bebida\n" + "8.Deletar uma bebida\n"
 				+ "9.Cadastrar Pastel\n" + "10.Visualizar a lista de pastéis\n" + "11.Editar um pastel\n"
 				+ "12.Deletar um pastel\n" + "13.Cadastrar novo estabelecimento\n" + "14.Visualizar lista de "
 				+ "Estabelecimentos" + "\n15.Editar um estabelecimento" + "\n16.Deletar um estabelecimento"
-				+ "\n17.Edita Estoque" + "\n18.Visualizar Estoque" + "\n19.Zerar Estoque" + "\n20.Cadastrar venda"
-				+ "\n21.Visualizar vendas" + "\n22.Editar uma venda" + "\n23.Deletar uma venda" + "\n24.Filtrar Pastéis por sabor"
-				+ "\n25.Sair");
+				+ "\n17.Edita Estoque" + "\n18.Visualizar/filtrar estoque" + "\n19.Zerar Estoque" + "\n20.Cadastrar venda"
+				+ "\n21.Visualizar vendas" + "\n22.Editar uma venda" + "\n23.Deletar uma venda" 
+				+ "\n24.Filtrar Pastéis por sabor" + "\n25.Sair");
 	}
 
 }

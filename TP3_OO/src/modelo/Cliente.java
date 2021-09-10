@@ -59,18 +59,18 @@ public class Cliente {
 
     public static void cadastrarCliente() {
     	
-    	System.out.println("Digite o número de clientes que serão cadastrados");
+    	System.out.println("\nDigite o número de clientes que serão cadastrados: ");
 		int size = Main.sc.nextInt();
 		Main.sc.nextLine();
 		
 		for (int i = 0; i < size; i++) {
-        System.out.println("Digite o nome do cliente: " + i + "º");
+        System.out.println("Digite o nome do cliente " + (i+1));
         String nomeCliente = Main.sc.nextLine();
 
-        System.out.println("Digite o endereco do cliente: " + i + "º");
+        System.out.println("Digite o endereco do cliente: " + (i+1));
         String enderecoCliente = Main.sc.nextLine();
 
-        System.out.println("Digite o CPF do cliente: " + i + "º");
+        System.out.println("Digite o CPF do cliente: " + (i+1));
         String cpfCliente = Main.sc.nextLine();
 
         Telefone telefoneCliente = Telefone.cadastrarTelefone(i);
@@ -82,9 +82,9 @@ public class Cliente {
 
     public static void visualizarClientes() {
 for (int i = 0; i < Main.clientes.size(); i++) {
-            System.out.print(i + "º - ");
+            System.out.print("\nID Cliente - " + i + "\n");
             System.out.println(Main.clientes.get(i));
-            System.out.println("__");
+            System.out.println("__________________________________________");
         }
     }
 
@@ -112,7 +112,7 @@ for (int i = 0; i < Main.clientes.size(); i++) {
 
         Cliente cliente = new Cliente(nomeCliente, enderecoCliente, cpfCliente, telefoneCliente);
         clientes.set(i, cliente);
-        System.out.println("Cliente editado\n");
+        System.out.println("\nCliente editado\n");
         }
     
     public static void visualizarNomeCliente() {
@@ -125,18 +125,18 @@ for (int i = 0; i < Main.clientes.size(); i++) {
 
     public static void deletarCliente(ArrayList<Cliente> clientes) {
     	
-    	System.out.println("Digite o número do cliente desejado");
+    	System.out.println("\nDigite o número do cliente desejado");
 		int i = Main.sc.nextInt();
 		Main.sc.nextLine();
     	
     	clientes.remove(i);
-        System.out.println("Cliente totalmente removido\n");
+        System.out.println("\nCliente totalmente removido\n");
         
     }
 
     @Override
     public String toString() {
-        return "Cliente [\n Nome do cliente = " + nomeCliente + "\nEndereco do cliente = " + enderecoCliente 
-                + "\nCPF do cliente = " + cpfCliente + "\nTelefone do cliente = " + telefoneCliente + "\n]";
+        return "\nNome do cliente = " + nomeCliente + "\nEndereço do cliente = " + enderecoCliente 
+                + "\nCPF do cliente = " + cpfCliente + "\nTelefone do cliente = " + telefoneCliente + "\n";
     }
 }
