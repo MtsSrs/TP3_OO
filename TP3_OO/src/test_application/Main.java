@@ -9,6 +9,7 @@ import modelo.Estabelecimento;
 import modelo.Estoque;
 import modelo.Pastel;
 import modelo.Telefone;
+import modelo.Venda;
 
 public class Main {
 
@@ -19,6 +20,7 @@ public class Main {
 	public static ArrayList<Integer> estoque_pastel;
 	public static ArrayList<Integer> estoque_bebida;
 	public static ArrayList<Estabelecimento> estabelecimentos;
+	public static ArrayList<Venda> vendas;
 
 	public static void main(String[] args) {
 		int caseSelect = 0;
@@ -28,6 +30,7 @@ public class Main {
 		estoque_pastel = new ArrayList<Integer>();
 		estoque_bebida = new ArrayList<Integer>();
 		estabelecimentos = new ArrayList<Estabelecimento>();
+		vendas = new ArrayList<Venda>();
 
 		clientes.add(new Cliente("Mateus", "Brasília", "11111111111", new Telefone("61", "123456789")));
 		clientes.add(new Cliente("Matheus", "Valparaíso", "22222222222", new Telefone("61", "987654321")));
@@ -170,6 +173,27 @@ public class Main {
 
 				Estoque.deletarEstoque();
 				break;
+				
+			case 20:
+				
+				Venda.vendaCliente();
+				break;
+				
+			case 21:
+				
+				Venda.visualizarVendas();
+				break;
+				
+			case 22:
+				
+				Venda.visualizarVendas();
+				Venda.editarVenda();
+				break;
+				
+			case 23:
+				
+				Venda.deletarVenda();
+				break;
 
 			default:
 				System.out.println("error");
@@ -187,7 +211,8 @@ public class Main {
 				+ "9.Cadastrar Pastel\n" + "10.Visualizar a lista de pastéis\n" + "11.Editar um pastel\n"
 				+ "12.Deletar um pastel\n" + "13.Cadastrar novo estabelecimento\n" + "14.Visualizar lista de "
 				+ "Estabelecimentos" + "\n15.Editar um estabelecimento" + "\n16.Deletar um estabelecimento"
-				+ "\n17.Edita Estoque" + "\n18.Visualizar Estoque" + "\n19.Zerar Estoque");
+				+ "\n17.Edita Estoque" + "\n18.Visualizar Estoque" + "\n19.Zerar Estoque" + "\n20.Cadastrar venda"
+				+ "\n21.Visualizar vendas" + "\n22.Editar uma venda" + "\n23.Deletar uma venda");
 	}
 
 }
