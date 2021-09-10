@@ -128,7 +128,7 @@ public class Pastel extends Produto {
 		System.out.println("Pastel totalmente removido\n");
 	}
 
-	public static void buscarPastelPedido(ArrayList<Pastel> pasteis) {
+	public static void filtrarPastel(ArrayList<Pastel> pasteis) {
 		System.out.println("\nDigite o sabor (Salgado ou Doce)");
 		String nome = Main.sc.nextLine();
 		try {

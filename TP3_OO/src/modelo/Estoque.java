@@ -133,6 +133,33 @@ public class Estoque {
 	}
 	
 	public static void filtrarEstoque() {
+		System.out.println("\nDigite - 1 - para visualizar pastéis \nDigite - 2 - para visualizar bebidas\n");
+		int num = Main.sc.nextInt();
+		Main.sc.nextLine();
+		if (num == 1) {
+			for (int i = 0; i < Main.pasteis.size(); i++) {
+				System.out.print(i + " - ");
+				System.out.print(Main.pasteis.get(i).getNomeProduto());
+				System.out.print(" - ");
+				System.out.println(Main.estoque_pastel.get(i));
+				System.out.println("___________________________________\n");
+
+			}
+			return;
+		}
+		if (num == 2) {
+			for (int i = 0; i < Main.bebidas.size(); i++) {
+				System.out.print(i + " - ");
+				System.out.print(Main.bebidas.get(i).getNomeProduto());
+				System.out.print(" - ");
+				System.out.println(Main.estoque_bebida.get(i));
+				System.out.println("___________________________________\n");
+			}
+			return;
+		} else {
+			System.out.println("Erro");
+			return;
+		}
 		
 	}
 

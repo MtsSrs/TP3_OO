@@ -213,12 +213,12 @@ public class Main {
 
 			case 24: //Switch de filtro de pasteis por sabor
 
-				Pastel.buscarPastelPedido(pasteis);
+				Pastel.filtrarPastel(pasteis);
 				break;
 
-			case 25:  //É a mesma função, apenas no local dos filtros
+			case 25:  //Switch de filtro
 
-				Estoque.visualizarEstoqueProduto();
+				Estoque.filtrarEstoque();
 				break;
 
 			case 26: //Exit do programa
