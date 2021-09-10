@@ -6,6 +6,7 @@ public class Venda {
 
     private int idVenda = 0;
     private Cliente clienteVenda;
+    private Estoque estoqueVenda;
     private float precoVenda;
 
     public Venda(int idVenda, Cliente clienteVenda, float precoVenda) {
@@ -39,9 +40,10 @@ public class Venda {
     }
 
     public static void vendaCliente() {
-    	int aux = 0;
+    	int aux = 0, estoquePastel, estoqueBebida;
     	float preco1 = 0;
     	float preco2 = 0;
+    	
         Cliente.visualizarNomeCliente();
 
         System.out.println("Digite o número do cliente que realizou a compra");
@@ -56,10 +58,21 @@ public class Venda {
 	        System.out.println("Digite a quantidade comprada");
 	        int quantidadePastel = Main.sc.nextInt();
 	        
+	        estoquePastel = Main.estoque_pastel.get(selecaoPastel) - quantidadePastel;
+	        
+	        if(estoquePastel < 0) {
+	        	System.out.println("\n=>Desculpe mas não há pasteis o bastante no estoque, retornando ao Menu<=\n");
+	        	return;
+	        } else {
+	        
 	        preco1 = preco1+quantidadePastel*Main.pasteis.get(selecaoPastel).getPrecoProduto();
+	        
+	        Main.estoque_pastel.set(selecaoPastel, estoquePastel);
 	        
 	        System.out.println("Deseja cadastrar outro pastel na compra? 1-Sim/2-Não");
 	        aux = Main.sc.nextInt();
+	        Main.sc.nextLine();
+	        }
         } while (aux != 2);
         
 
@@ -71,15 +84,23 @@ public class Venda {
 	        System.out.println("Digite a quantidade comprada");
 	        int quantidadeBebida = Main.sc.nextInt();
 	        
+	        estoqueBebida = Main.estoque_bebida.get(selecaoBebida) - quantidadeBebida;
+	        
+	        if(estoqueBebida < 0) {
+	        	System.out.println("\n=>Desculpe mas não há bebidas o bastante no estoque, retornando ao Menu<=\n");
+	        	return;
+	        } else {
 	        preco2 = preco2+quantidadeBebida*Main.bebidas.get(selecaoBebida).getPrecoProduto();
+	        
+	        Main.estoque_bebida.set(selecaoBebida, estoqueBebida);
 	        
 	        System.out.println("Deseja cadastrar outra bebida na compra? 1-Sim/2-Não");
 	        aux = Main.sc.nextInt();
+	        }
         } while (aux !=2);
         
 
         Cliente clienteVenda = Main.clientes.get(selecaoCliente);
-        //setPrecoVenda(Main.pasteis.get(selecaoPastel).getPrecoProduto() + Main.bebidas.get(selecaoBebida).getPrecoProduto());
 
         int idVenda = Main.vendas.size();
 
@@ -107,7 +128,7 @@ public class Venda {
             Main.sc.nextLine();
         }
 
-        int aux = 0;
+        int aux = 0, estoquePastel, estoqueBebida;
     	float preco1 = 0;
     	float preco2 = 0;
         Cliente.visualizarNomeCliente();
@@ -124,10 +145,21 @@ public class Venda {
 	        System.out.println("Digite a quantidade comprada");
 	        int quantidadePastel = Main.sc.nextInt();
 	        
+	        estoquePastel = Main.estoque_pastel.get(selecaoPastel) - quantidadePastel;
+	        
+	        if(estoquePastel < 0) {
+	        	System.out.println("\n=>Desculpe mas não há pasteis o bastante no estoque, retornando ao Menu<=\n");
+	        	return;
+	        } else {
+	        
 	        preco1 = preco1+quantidadePastel*Main.pasteis.get(selecaoPastel).getPrecoProduto();
+	        
+	        Main.estoque_pastel.set(selecaoPastel, estoquePastel);
 	        
 	        System.out.println("Deseja cadastrar outro pastel na compra? 1-Sim/2-Não");
 	        aux = Main.sc.nextInt();
+	        Main.sc.nextLine();
+	        }
         } while (aux != 2);
         
 
@@ -139,15 +171,23 @@ public class Venda {
 	        System.out.println("Digite a quantidade comprada");
 	        int quantidadeBebida = Main.sc.nextInt();
 	        
+	        estoqueBebida = Main.estoque_bebida.get(selecaoBebida) - quantidadeBebida;
+	        
+	        if(estoqueBebida < 0) {
+	        	System.out.println("\n=>Desculpe mas não há bebidas o bastante no estoque, retornando ao Menu<=\n");
+	        	return;
+	        } else {
 	        preco2 = preco2+quantidadeBebida*Main.bebidas.get(selecaoBebida).getPrecoProduto();
+	        
+	        Main.estoque_bebida.set(selecaoBebida, estoqueBebida);
 	        
 	        System.out.println("Deseja cadastrar outra bebida na compra? 1-Sim/2-Não");
 	        aux = Main.sc.nextInt();
+	        }
         } while (aux !=2);
         
 
         Cliente clienteVenda = Main.clientes.get(selecaoCliente);
-        //setPrecoVenda(Main.pasteis.get(selecaoPastel).getPrecoProduto() + Main.bebidas.get(selecaoBebida).getPrecoProduto());
 
         int idVenda = Main.vendas.get(i).getIdVenda();
 
@@ -169,5 +209,13 @@ public String toString() {
         return "Venda [\nID da venda = " + idVenda + "\n" + Main.clientes.get(idVenda).getNomeCliente() 
                 + "\nPreço total:" + precoVenda + " reais]";
     }
+
+	public Estoque getEstoqueVenda() {
+		return estoqueVenda;
+	}
+
+	public void setEstoqueVenda(Estoque estoqueVenda) {
+		this.estoqueVenda = estoqueVenda;
+	}
 
 }

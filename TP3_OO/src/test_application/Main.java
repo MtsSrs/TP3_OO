@@ -37,19 +37,24 @@ public class Main {
 
 		bebidas.add(new Bebida("Água", (float) 4.99, 1, "Uma garrafa de água", "0", "Água", "500"));
 		bebidas.add(new Bebida("Coca-cola", (float) 7.99, 2, "Uma lata de Coca-cola", "85", "Refrigerante", "300"));
+		bebidas.add(new Bebida("Coca-cola light", (float) 7.99, 3, "Uma lata de Coca-cola light", "2", "Refrigerante", "300"));
 
 		pasteis.add(new Pastel("Pastel de queijo pequeno", (float) 13.99, 1, "Pastel recheado com queijo", "215",
 				"Salgado", "10"));
 		pasteis.add(new Pastel("Pastel de carne pequeno", (float) 13.99, 2, "Pastel recheado com carne", "149",
 				"Salgado", "10"));
+		pasteis.add(new Pastel("Pastel de chocolate médio", (float) 15.99, 3, "Pastel recheado com carne", "250",
+				"Doce", "15"));
 
 		estabelecimentos.add(new Estabelecimento("Brasília", "11111111", new Telefone("61", "111112222")));
 		estabelecimentos.add(new Estabelecimento("Valparaíso", "22222222", new Telefone("61", "222221111")));
 
 		estoque_pastel.add(10);
 		estoque_pastel.add(20);
+		estoque_pastel.add(30);
 		estoque_bebida.add(30);
 		estoque_bebida.add(40);
+		estoque_bebida.add(50);
 
 		do {
 			menuInicial();
@@ -194,12 +199,20 @@ public class Main {
 				
 				Venda.deletarVenda();
 				break;
-
+			
+			case 24:
+				
+				Pastel.buscarPastelPedido(pasteis);
+				break;
+			
+			case 25:
+				break;
+				
 			default:
 				System.out.println("error");
-				System.exit(0);
+				Main.menuInicial();
 			}
-		} while (caseSelect < 30);
+		} while (caseSelect != 25);
 
 		sc.close();
 	}
@@ -212,7 +225,8 @@ public class Main {
 				+ "12.Deletar um pastel\n" + "13.Cadastrar novo estabelecimento\n" + "14.Visualizar lista de "
 				+ "Estabelecimentos" + "\n15.Editar um estabelecimento" + "\n16.Deletar um estabelecimento"
 				+ "\n17.Edita Estoque" + "\n18.Visualizar Estoque" + "\n19.Zerar Estoque" + "\n20.Cadastrar venda"
-				+ "\n21.Visualizar vendas" + "\n22.Editar uma venda" + "\n23.Deletar uma venda");
+				+ "\n21.Visualizar vendas" + "\n22.Editar uma venda" + "\n23.Deletar uma venda" + "\n24.Filtrar Pastéis por sabor"
+				+ "\n25.Sair");
 	}
 
 }

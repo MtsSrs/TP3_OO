@@ -125,6 +125,23 @@ public class Pastel extends Produto {
 		Main.estoque_pastel.remove(i);
 		System.out.println("Pastel totalmente removido\n");
 	}
+	
+	public static void buscarPastelPedido(ArrayList<Pastel> pasteis) {
+		System.out.println("Digite o nome do sabor");
+		String nome = Main.sc.nextLine();
+		try {
+			for (Pastel p : pasteis) {
+				if (p.getSaborPastel().toUpperCase().equals(nome.toUpperCase())) {
+					System.out.println("_________________________________________");
+					System.out.println(p);
+					System.out.println("_________________________________________");
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("Sabor não encontrado");
+		}
+		return;
+	}
 
 	public String getSaborPastel() {
 		return saborPastel;
